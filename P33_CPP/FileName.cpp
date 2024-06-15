@@ -10,6 +10,252 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	// 15.06.2024 
+	// ===========================================================================
+
+	/*
+	
+	if (condition);
+	{
+		oper1;
+	}
+	else
+	{
+		oper2;
+	}
+	
+	*/
+
+	/*int a, b, c, d;
+	cin >> a >> b >> c >> d;
+
+	if (a > b && a > c)
+	{
+		cout << a << endl;
+		int n = 100;
+	}
+	else if (b > c)
+	{
+		cout << b << endl;
+	}
+	else
+	{
+		cout << c << endl;
+	}*/
+
+
+
+	/*int a, b, c, d, num = 0;
+
+	cin >> a >> b >> c >> d;
+
+	if (a % 2 == 0)
+	{
+		++num;
+	}
+
+	if (b % 2 == 0)
+	{
+		++num;
+	}
+
+	if (c % 2 == 0)
+	{
+		++num;
+	}
+
+	if (d % 2 == 0)
+	{
+		++num;
+	}
+
+	cout << "Count: " << num << endl;*/
+
+
+
+
+	// Определить, останется ли в клеёнке более N дырок если во время 
+	// обеда K раз проткнуть её вилкой с M отломанными зубчиками 
+	// и L раз – целой вилкой, у которой S зубчиков.
+
+
+	/*int K, M, L, S, N, num;
+	cin >> K >> M >> L >> S >> N;
+	num = K * (S - M) + S * L;
+
+	cout << num << " D " << endl;
+
+	if (num > N)
+	{
+		cout << "True" << endl;
+	}
+	else
+	{
+		cout << "False" << endl;
+	}*/
+
+
+
+	//Написать программу решения квадратного уравнения ax2 + bx + c = 0. Если известны его коэффициенты a, b, c.
+
+	/*float a, b, c, D, x1, x2;
+	cout << "a : "; cin >> a;
+	cout << "b : "; cin >> b;
+	cout << "c : "; cin >> c;
+
+	if (a > 0)
+	{
+		D = b * b - 4 * a * c;
+		if (D > 0)
+		{
+			x1 = (-b + sqrt(D)) / (2 * a);
+			x2 = (-b - sqrt(D)) / (2 * a);
+			cout << "X1 = " << x1 << endl;
+			cout << "X2 = " << x2 << endl;
+
+		}
+		else
+		{
+			if (D == 0)
+			{
+				x1 = -b / (2 + a);
+				cout << "X = " << x1 << endl;
+			}
+			else
+			{
+				cout << "No solution";
+			}
+		}
+	}
+	else
+	{
+		cout << "Not square" << endl;
+
+	}*/
+	
+
+	// Найти произведение двух наибольших чисел из трёх введённых с клавиатуры.
+
+	
+
+
+	// Написать программу учёта денежной скидки в зависимости от суммы.
+	// Если покупатель приобрел товара на сумму 
+	// больше 100 гривен, то скидка 5 %, 
+	// более 500грн.– 10 %, 
+	// более 1000грн – 25 % .
+	// Приложение должно выдать сумму, которую должен уплатить покупатель и 
+	// размер скидки в %, которую он получил.
+
+	/*int s, p = 0;
+	float S;
+	cin >> s;
+	if (s >= 100 && s < 500)
+	{
+		p = 5;
+	}
+	else if (s >= 500 && s < 1000)
+	{
+		p = 10;
+	}
+	else if (s >= 1000)
+	{
+		p = 25;
+	}
+	S = s - (s * p / 100.);
+	cout << "S = " << S << endl;
+	cout << "P = " << p << endl;*/
+
+
+
+	// Дано целое число, лежащее в диапазоне -999 – 999.Вывести его строку -
+	// описание вида «четное двузначное число», «нечетное трехзначное число»
+	// и т.д.
+
+
+	/*int n;
+
+	cout << "Число "; cin >> n;
+	if (n % 2 == 0)
+	{
+		cout << "Парне";
+	}
+	else
+	{
+		cout << "Не парне";
+	}
+
+	if (n < 10)
+	{
+		cout << " однозначне";
+	}
+	else if (n >= 10 and n < 100)
+	{
+		cout << " двузначне";
+	}
+	else if (n >= 100 and n < 1000)
+	{
+		cout << " трьохзначне";
+	}
+
+	cout << " число" << endl;*/
+
+
+	// Написать программу калькулятора на четыре действия : +-*/ .
+    // 5+4
+
+	int a, b;
+	char op;
+	cin >> a >> op >> b;
+
+	switch (op)
+	{
+	case '+': cout << a + b << endl; break;
+	case '-': cout << a - b << endl; break;
+	case '*': cout << a * b << endl; break;
+	case '/': cout << a / b << endl; break;
+	default: 
+		cout << "Not operation" << endl; 
+		break;
+	}
+
+
+	/*if (op == '+')
+	{
+		cout << a + b << endl;
+	}
+	else if (op == '-')
+	{
+		cout << a - b << endl;
+	}
+	else if (op == '*')
+	{
+		cout << a * b << endl;
+	}
+	else if (op == '/')
+	{
+		cout << a / b << endl;
+	}
+	else
+	{
+		cout << "Not operation" << endl;
+	}*/
+
+
+	int num;
+	cin >> num;
+	switch (num)
+	{
+	case 1: case 2: case 12: cout << "3UMA" << endl; break;
+	case 3:	case 4: case 5: cout << "BECHA" << endl; break;
+	case 6: case 7: case 8: cout << "LITO" << endl; break;
+	case 9: case 10: case 11: cout << "OCIHb" << endl; break;
+	default: cout << "Not month" << endl; break;
+	}
+
+	
+
+
 	// 13.06.2024 
 	// ===========================================================================
 
@@ -20,6 +266,7 @@ int main()
 	// - , + , ++ , --
 	// = , + , - , * , / , += , -= , *= , /= , % , %=
 
+	// () , {} , << , >> , | , & , ~ , [] , ,  . -> , ?: , # , ; @ , \ , sizeof 
 
 	//int a = 5, b = 4, c;
 	//c = -a;
@@ -99,8 +346,8 @@ int main()
 	c = 0 == 0 and not(5 >= 5) and 5 > 4 && 3 == 3;
 	cout << c << endl;*/
 
-	int a, b, c;
-	cin >> a >> b >> c;
+	//int a, b, c;
+	//cin >> a >> b >> c;
 	//bool c = 
 
 
