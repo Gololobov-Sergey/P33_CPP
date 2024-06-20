@@ -10,6 +10,144 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	// 20.06.2024 
+	// ===========================================================================
+
+
+	/*typedef unsigned char UC;
+	UC c = 'ь';
+	cout << (int)c << endl;*/
+
+
+
+	int n;
+	cin >> n;
+	for (int i = 1; i <= 10; i++)
+	{
+		cout << n << " x " << i << " = " << i * n << endl;
+	}
+
+
+
+	// Дано вещественное число — цена 1 кг конфет.Вывести стоимость 1.2,
+	// 1.4, ..., 2 кг конфет.
+
+
+
+
+
+	/*for (size_t i = 0; i < 10; i++)
+	{
+
+	}
+	
+	for (int i = 0; i < 10; i++)
+	{
+		cout << i << " ";
+	}*/
+
+
+	/*int a, b;
+	cin >> a >> b;
+	for (int i = a; i <= b; i++)
+	{
+		cout << i << " ";
+	}
+	cout << endl;
+	cout << a << endl;
+	cout << b << endl;*/
+
+	/*int n, m = 0, k = 0;
+	cin >> n;
+	while (n > 0)
+	{
+		int r = n % 10;
+		if (r != 3 && r != 6)
+		{
+			m = m + r * pow(10, k++);
+		}
+		n /= 10;
+	}
+
+	cout << m << endl;*/
+
+
+
+	// Дано целое число N(> 1).Найти наименьшее целое число K, при кото -
+	// ром выполняется неравенство 3^K > N.
+
+
+	/*int n, s = 0;
+	cin >> n;
+	while (n > 0)
+	{
+		int r = n % 10;
+		s += r;
+		n /= 10;
+	}
+	cout << s << endl;*/
+
+
+
+	/*int n, rn = 0, r;
+	cin >> n;
+	while (n != 0)
+	{
+		r = n % 10;
+		rn = rn * 10 + r;
+		n /= 10;
+	}
+	cout << rn;*/
+
+
+	/*int a, s = 0;
+	do
+	{
+		cin >> a;
+		s += a;
+	} while (a != 0);
+	cout << s << endl;*/
+
+	/*while (true)
+	{
+		break;
+		int a = 0;
+	}
+
+	do
+	{
+
+	} while (true);*/
+
+	/*int a = 5, b = 4, c = 9;
+	int max;
+	if (a > b && a > c)
+	{
+		max = a;
+	}
+	else
+	{
+		if (b > c)
+		{
+			max = b;
+		}
+		else
+		{
+			max = c;
+		}
+	}*/
+
+
+	// (condition)? oper1 : oper2;
+
+	/*(a > b)? max = a : max = b;
+
+	max = (a > b) ? a : b;
+
+	max = (a > b && a > c) ? a : (b > c) ? b : c;*/
+
+
 	// 15.06.2024 
 	// ===========================================================================
 
@@ -204,7 +342,7 @@ int main()
 	// Написать программу калькулятора на четыре действия : +-*/ .
     // 5+4
 
-	int a, b;
+	/*int a, b;
 	char op;
 	cin >> a >> op >> b;
 
@@ -217,7 +355,7 @@ int main()
 	default: 
 		cout << "Not operation" << endl; 
 		break;
-	}
+	}*/
 
 
 	/*if (op == '+')
@@ -242,7 +380,7 @@ int main()
 	}*/
 
 
-	int num;
+	/*int num;
 	cin >> num;
 	switch (num)
 	{
@@ -251,7 +389,7 @@ int main()
 	case 6: case 7: case 8: cout << "LITO" << endl; break;
 	case 9: case 10: case 11: cout << "OCIHb" << endl; break;
 	default: cout << "Not month" << endl; break;
-	}
+	}*/
 
 	
 
