@@ -1,6 +1,7 @@
 ﻿#include<iostream>
 #include<Windows.h>
-
+#include"Timer.h"
+#include<algorithm>
 using namespace std;
 
 
@@ -9,6 +10,143 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+
+
+	// 22.06.2024 
+	// ===========================================================================
+
+	srand(time(0));
+
+	//cout << time(0) << endl;
+
+	const int size = 20000;
+	int arr[size];// = {3,5,8,0};
+
+	//cout << arr << endl;
+	int minValue = 0, maxValue = 2000;
+	for (size_t i = 0; i < size; i++)
+	{
+		//cin >> arr[i];
+		arr[i] = rand() % (maxValue - minValue + 1) + minValue;
+	}
+
+	/*for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;*/
+
+	/*int t = arr[0];
+	arr[0] = arr[size - 1];
+	arr[size - 1] = t;*/
+
+	//swap(arr[0], arr[size - 1]);
+
+	//Timer t;
+
+	//sort(arr, arr + size);
+
+	/*for (size_t i = 0; i < size-1; i++)
+	{
+		for (size_t j = 0; j < size-1-i; j++)
+		{
+			if (arr[j] > arr[j + 1]) 
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}*/
+	//cout << t.elapsed() << endl;
+	/*for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;*/
+
+
+
+
+	/*int max = arr[0], min = arr[0], imax = 0, imin = 0;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+			imax = i;
+		}
+
+		if (arr[i] < min)
+		{
+			min = arr[i];
+			imin = i;
+		}
+	}
+
+	int s = 0;
+	int start = (imax < imin) ? imax : imin;
+	int end = (imax > imin) ? imax : imin;
+	for (size_t i = start + 1; i < end; i++)
+	{
+		s += arr[i];
+	}
+	cout << s << endl;*/
+
+
+	/*int m = arr[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > m)
+		{
+			m = arr[i];
+		}
+	}
+	cout << m << endl;*/
+
+
+	/*int col = 1;
+	for (size_t i = 0; i < size-1; i++)
+	{
+		if (arr[i] < arr[i + 1]) {
+			col++;
+		}
+	}
+	if (col == size) {
+		cout << true;
+	}
+	else {
+		cout << false;
+	}*/
+
+
+
+
+	/*int count = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] % 2 == 0) {
+			count++;
+		}
+	}
+	cout << count << endl;*/
+
+	//Timer t;
+	//int count = 0;
+	//for (size_t i = 1; i < 500000; i++)
+	//{
+	//	int a5 = i % 10;
+	//	int a4 = i / 10 % 10;
+	//	int a3 = i / 100 % 10;
+	//	int a2 = i / 1000 % 10;
+	//	int a1 = i /10000;
+	//	if (a1 == 1 && a2 == 3 || a2 == 1 && a3 == 3 || a3 == 1 && a4 == 3 || a4 == 1 && a5 == 3 || a1 == 4 || a2 == 4 || a3 == 4 || a4 == 4 || a5 == 4)
+	//	{
+	//		count++;
+	//		//cout << i << " ";
+	//	}
+	//}
+	//cout << t.elapsed() << endl;
+	//cout << count << endl;
 
 
 	// 20.06.2024 
@@ -21,12 +159,12 @@ int main()
 
 
 
-	int n;
+	/*int n;
 	cin >> n;
 	for (int i = 1; i <= 10; i++)
 	{
 		cout << n << " x " << i << " = " << i * n << endl;
-	}
+	}*/
 
 
 
@@ -41,7 +179,7 @@ int main()
 	{
 
 	}
-	
+
 	for (int i = 0; i < 10; i++)
 	{
 		cout << i << " ";
@@ -152,7 +290,7 @@ int main()
 	// ===========================================================================
 
 	/*
-	
+
 	if (condition);
 	{
 		oper1;
@@ -161,7 +299,7 @@ int main()
 	{
 		oper2;
 	}
-	
+
 	*/
 
 	/*int a, b, c, d;
@@ -270,11 +408,11 @@ int main()
 		cout << "Not square" << endl;
 
 	}*/
-	
+
 
 	// Найти произведение двух наибольших чисел из трёх введённых с клавиатуры.
 
-	
+
 
 
 	// Написать программу учёта денежной скидки в зависимости от суммы.
@@ -340,7 +478,7 @@ int main()
 
 
 	// Написать программу калькулятора на четыре действия : +-*/ .
-    // 5+4
+	// 5+4
 
 	/*int a, b;
 	char op;
@@ -352,8 +490,8 @@ int main()
 	case '-': cout << a - b << endl; break;
 	case '*': cout << a * b << endl; break;
 	case '/': cout << a / b << endl; break;
-	default: 
-		cout << "Not operation" << endl; 
+	default:
+		cout << "Not operation" << endl;
 		break;
 	}*/
 
@@ -391,7 +529,7 @@ int main()
 	default: cout << "Not month" << endl; break;
 	}*/
 
-	
+
 
 
 	// 13.06.2024 
@@ -463,7 +601,7 @@ int main()
 	/*int a, b;
 	cin >> a;
 	int a1, a2, a3;
-	a1 = a / 100; 
+	a1 = a / 100;
 	a2 = a / 10 % 10;
 	a3 = a % 10;
 	b = a2 * 100 + a3 * 10 + a1;
@@ -520,7 +658,7 @@ int main()
 
 	// float     - 4b (7)
 	// double    - 8b (15)
-	
+
 	/*int year = 2024;
 	cout << year << endl;
 	cout << &year << endl;
@@ -537,9 +675,9 @@ int main()
 	float v_zosh, v_oblk, sum;
 	v_zosh = 10.68;
 	sum = count * (v_zosh + v_oblk);*/
-	
 
-	
+
+
 
 
 	system("pause");
