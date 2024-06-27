@@ -2,6 +2,8 @@
 #include<Windows.h>
 #include"Timer.h"
 #include<algorithm>
+#include<iomanip>
+
 using namespace std;
 
 
@@ -10,25 +12,200 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+	srand(time(0));
+
+	// 27.06.2024 
+	// ===========================================================================
+
+
+
 
 
 	// 22.06.2024 
 	// ===========================================================================
 
-	srand(time(0));
+	//const int row = 5, col = 5;
+	//int arr[row][col];
+	//int minValue = 1, maxValue = 12;
+	//for (size_t i = 0; i < row; i++)
+	//{
+	//	for (size_t j = 0; j < col; j++)
+	//	{
+	//		arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
+	//	}
+	//}
+
+	//int max = arr[0][0];
+	//for (size_t i = 0; i < row; i++)
+	//{
+	//	for (size_t j = 0; j < col; j++)
+	//	{
+	//		if (arr[i][j] > max)
+	//		{
+	//			max = arr[i][j];
+	//		}
+	//	}
+	//}
+
+	//int countMax = 0;
+	//while (max > 0)
+	//{
+	//	countMax++;
+	//	max /= 10;
+	//}
+	//
+	//int len = countMax + 1 + 1;
+	//int maxSum = 0;
+	//int imaxRow = 0;
+	//int sumRow[row];
+	//for (size_t i = 0; i < row; i++)
+	//{
+	//	int sum = 0;
+	//	for (size_t j = 0; j < col; j++)
+	//	{
+	//		cout << setw(len) << arr[i][j];
+	//		sum += arr[i][j];
+	//	}
+	//	sumRow[i] = sum;
+	//	cout << " | " << sum;
+	//	cout << endl;
+	//	if (sum > maxSum)
+	//	{
+	//		maxSum = sum;
+	//		imaxRow = i;
+	//	}
+	//}
+	////cout << imaxRow << endl;
+	//cout << "--------------------------" << endl;
+
+	//maxSum = 0;
+	//int imaxCol = 0;
+	//for (size_t j = 0; j < col; j++)
+	//{
+	//	int sum = 0;
+	//	for (size_t i = 0; i < row; i++)
+	//	{
+	//		sum += arr[i][j];
+	//	}
+	//	cout << setw(len) << sum;
+	//	if (sum > maxSum)
+	//	{
+	//		sum = maxSum;
+	//		imaxCol = j;
+	//	}
+	//	
+	//}
+	//cout << endl;
+	//cout << imaxRow << endl;
+	//cout << imaxCol << endl;
+
+
+	//for (size_t i = 0; i < row-1; i++)
+	//{
+	//	for (size_t j = 0; j < row-1-i; j++)
+	//	{
+	//		if (sumRow[j] < sumRow[j + 1]) 
+	//		{
+	//			swap(sumRow[j], sumRow[j + 1]);
+	//			for (size_t k = 0; k < col; k++)
+	//			{
+	//				swap(arr[j][k], arr[j+1][k]);
+	//			}
+	//		}
+	//	}
+	//}
+
+	//cout << endl;
+	//for (size_t i = 0; i < row; i++)
+	//{
+	//	for (size_t j = 0; j < col; j++)
+	//	{
+	//		cout << setw(len) << arr[i][j];
+	//	}
+	//	cout << " | " << sumRow[i];
+	//	cout << endl;
+
+	//}
+	
+	//===================================================
+
+	const int row = 5, col = 5;
+	int arr[row][col];
+	int minValue = 1, maxValue = 12;
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
+		}
+	}
+
+	int max = arr[0][0];
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			if (arr[i][j] > max)
+			{
+				max = arr[i][j];
+			}
+		}
+	}
+
+	int countMax = 0;
+	while (max > 0)
+	{
+		countMax++;
+		max /= 10;
+	}
+
+	int len = countMax + 1 + 1;
+	int maxSum = 0;
+	int imaxRow = 0;
+	int sumRow[row];
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(len) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col/2; j++)
+		{
+			swap(arr[i][j], arr[i][col-1-j]);
+		}
+	}
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(len) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	//cout << arr << endl;
 
 	//cout << time(0) << endl;
 
-	const int size = 20000;
-	int arr[size];// = {3,5,8,0};
+	//const int size = 20000;
+	//int arr[size];// = {3,5,8,0};
 
 	//cout << arr << endl;
-	int minValue = 0, maxValue = 2000;
-	for (size_t i = 0; i < size; i++)
-	{
-		//cin >> arr[i];
-		arr[i] = rand() % (maxValue - minValue + 1) + minValue;
-	}
+	//int minValue = 0, maxValue = 2000;
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	//cin >> arr[i];
+	//	arr[i] = rand() % (maxValue - minValue + 1) + minValue;
+	//}
 
 	/*for (size_t i = 0; i < size; i++)
 	{
