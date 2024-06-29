@@ -7,18 +7,239 @@
 using namespace std;
 
 
+//type name(param)
+//{
+//	body
+//}
+
+
+void printLine()
+{
+	for (size_t i = 0; i < 10; i++)
+	{
+		cout << "*";
+	}
+	cout << endl;
+}
+
+
+int Sum(int a, int b)
+{
+	return a + b;
+}
+
+float avg(int a, int b, int c)
+{
+	return (a + b + c) / 3.f;
+}	
+
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	//SetConsoleCP(1251);
+	//SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	srand(time(0));
 
-	// 27.06.2024 
+	// 29.06.2024 
 	// ===========================================================================
 
+	printLine();
+	printLine();
+	printLine();
+	printLine();
 
 
+	cout << Sum(5, 4) << endl;
+	cout << avg(3,4,6) << endl;
+
+	/*const int row = 5, col = 5;
+	int arr[row][col];
+	int minValue = 1, maxValue = 12;*/
+
+	/*for (size_t i = 0; i < 256; i++)
+	{
+		cout << (char)i << " ";
+	}*/
+
+	// 0 0 0 1
+	// 1 0 0 0
+	// 0 1 0 0
+	// 0 0 1 0
+
+	//[3 0 1 2]
+
+	/*int uniqIndex[row];
+	for (int i = 0; i < row; i++)
+	{
+		int rnd = rand() % row;
+		bool flag = true;
+		for (size_t k = 0; k < i; k++)
+		{
+			if (uniqIndex[k] == rnd)
+			{
+				flag = false;
+				break;
+			}
+		}
+		if(flag)
+		{
+			uniqIndex[i] = rnd;
+		}
+		else
+		{
+			i--;
+		}
+	}
+
+	for (size_t i = 0; i < row; i++)
+	{
+		arr[i][uniqIndex[i]] = 1;
+	}*/
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
+		}
+	}*/
+
+
+
+	// n = 4
+
+	//  1  2  3  4
+	//  8  7  6  5
+	//  9 10 11 12
+	// 16 15 14 13
+
+	// - - - - |
+	//         |
+	// | - - - |
+	// |       
+	// | - - - |
+
+	/*int n = 1;
+	for (size_t i = 0; i < row; i++)
+	{
+		if (i % 2 == 0)
+		{
+			for (size_t j = 0; j < col; j++)
+			{
+				arr[i][j] = n++;
+			}
+		}
+		else
+		{
+			for (int j = col-1; j >= 0; j--)
+			{
+				arr[i][j] = n++;
+			}
+		}
+	}*/
+
+
+
+	/*int max = arr[0][0];
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			if (arr[i][j] > max)
+			{
+				max = arr[i][j];
+			}
+		}
+	}
+
+	int countMax = 0;
+	while (max > 0)
+	{
+		countMax++;
+		max /= 10;
+	}
+
+	int len = countMax + 1 + 1;
+	int maxSum = 0;
+	int imaxRow = 0;
+	int sumRow[row];
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(len) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;*/
+
+
+	/*for (size_t j = 0; j < col; j++)
+	{
+		for (size_t i = 0; i < row/2; i++)
+		{
+			swap(arr[i][j], arr[row-1-i][j]);
+		}
+	}*/
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = i+1; j < col; j++)
+		{
+			swap(arr[i][j], arr[j][i]);
+		}
+	}*/
+
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col - 1 - i; j++)
+		{
+			swap(arr[i][j], arr[row - 1 - j][col - 1 - i]);
+		}
+	}*/
+
+
+
+
+	//=====================================================
+	/*int sumCol[col];
+	for (size_t j = 0; j < col; j++)
+	{
+		int sum = 0;
+		for (size_t i = 0; i < row; i++)
+		{
+			sum += arr[i][j];
+		}
+		sumCol[j] = sum;
+	}
+
+	for (size_t k = 0; k < col-1; k++)
+	{
+		for (size_t j = 0; j < col-1-k; j++)
+		{
+			if(sumCol[j] > sumCol[j + 1])
+			{
+				swap(sumCol[j], sumCol[j + 1]);
+				for (size_t i = 0; i < row; i++)
+				{
+					swap(arr[i][j], arr[i][j + 1]);
+				}
+			}
+		}
+	}*/
+
+	//=====================================================
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(len) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;*/
 
 
 	// 22.06.2024 
@@ -126,10 +347,10 @@ int main()
 	//	cout << endl;
 
 	//}
-	
+
 	//===================================================
 
-	const int row = 5, col = 5;
+	/*const int row = 5, col = 5;
 	int arr[row][col];
 	int minValue = 1, maxValue = 12;
 	for (size_t i = 0; i < row; i++)
@@ -190,7 +411,7 @@ int main()
 		}
 		cout << endl;
 	}
-	cout << endl;
+	cout << endl;*/
 
 	//cout << arr << endl;
 
@@ -227,7 +448,7 @@ int main()
 	{
 		for (size_t j = 0; j < size-1-i; j++)
 		{
-			if (arr[j] > arr[j + 1]) 
+			if (arr[j] > arr[j + 1])
 			{
 				swap(arr[j], arr[j + 1]);
 			}
@@ -858,4 +1079,5 @@ int main()
 
 
 	system("pause");
+	return 0;
 }
