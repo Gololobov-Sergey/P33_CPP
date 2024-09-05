@@ -4,6 +4,8 @@
 #include<algorithm>
 #include<iomanip>
 
+#include"myFunc.h"
+
 using namespace std;
 
 
@@ -13,25 +15,6 @@ using namespace std;
 //}
 
 
-void printLine()
-{
-	for (size_t i = 0; i < 10; i++)
-	{
-		cout << "*";
-	}
-	cout << endl;
-}
-
-
-int Sum(int a, int b)
-{
-	return a + b;
-}
-
-float avg(int a, int b, int c)
-{
-	return (a + b + c) / 3.f;
-}	
 
 int main()
 {
@@ -40,17 +23,49 @@ int main()
 	cout.setf(ios::boolalpha);
 	srand(time(0));
 
+
+	// 05.09.2024 
+	// ===========================================================================
+
+	const int size = 10;
+	int arr[size];
+
+	setArray(arr, size, 20, 1000);
+	//printArray(arr, size);
+	//
+	/*printLine();
+	printLine(20);
+	printLine(30, '$');
+
+	float avg = avgArray(arr, size);
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] *= avg;
+	}*/
+
+
+	printcool(arr, size);
+
+	//   *************
+	//   1 3 6 4 3 5 7
+	//   *************
+
+	/*if (!isEven(2) && isPositive(2))
+	{
+
+	}*/
+
 	// 29.06.2024 
 	// ===========================================================================
 
-	printLine();
+	/*printLine();
 	printLine();
 	printLine();
 	printLine();
 
 
 	cout << Sum(5, 4) << endl;
-	cout << avg(3,4,6) << endl;
+	cout << avg(3,4,6) << endl;*/
 
 	/*const int row = 5, col = 5;
 	int arr[row][col];
