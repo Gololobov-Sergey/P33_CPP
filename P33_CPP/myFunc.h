@@ -5,6 +5,25 @@
 using namespace std;
 
 
+enum Color
+{
+	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
+	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
+};
+
+void SetColor(int text, int background)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
+}
+
+void gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
 void printLine(int n = 10, char s = '*')
 {
 	for (size_t i = 0; i < n; i++)
@@ -14,10 +33,10 @@ void printLine(int n = 10, char s = '*')
 	cout << endl;
 }
 
-
-int Sum(int a, int b)
+template<class T1, class T2, class T3>
+auto Sum(T1 a, T2 b, T3 c) -> decltype(a + b)
 {
-	return a + b;
+	return a + b + c;
 }
 
 float avg(int a, int b, int c)
@@ -25,8 +44,8 @@ float avg(int a, int b, int c)
 	return (a + b + c) / 3.f;
 }
 
-
-void setArray(int arr[], int size, int minValue = 0, int maxValue = 9)
+template<class T>
+void setArray(T arr[], int size, int minValue = 0, int maxValue = 9)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -34,17 +53,24 @@ void setArray(int arr[], int size, int minValue = 0, int maxValue = 9)
 	}
 }
 
-void printArray(int arr[], int size)
+template<class T>
+void printArray(T arr[], int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
 		cout << arr[i] << " ";
 	}
 	cout << endl;
-
 }
 
 
+
+/// <summary>
+/// Середне арифметичне елементів масиву
+/// </summary>
+/// <param name="arr">- вхідний масив</param>
+/// <param name="size">- розмір масиву</param>
+/// <returns>Середне арифметичне</returns>
 float avgArray(int arr[], int size)
 {
 	float Number = 0.f;
@@ -56,6 +82,31 @@ float avgArray(int arr[], int size)
 	return Number / size;
 }
 
+
+template<class T>
+T getSum(T arr[], int size)
+{
+	T sum = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+
+
+template<class T>
+int findIndex(T arr[], int size, T key)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		if(arr[i] == key)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
 
 
 
@@ -70,9 +121,37 @@ bool isPositive(int a)
 }
 
 
+int digitNumber(int n)
+{
+	int count = 0;
+	if (n <= 0)
+	{
+		count = 1;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		count++;
+		n /= 10;
+	}
+	return count;
+}
+
+
+int countDigitArray(int arr[], int size)
+{
+	int count = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		count += digitNumber(arr[i]);
+	}
+	return count;
+}
+
 void printcool(int arr[], int size)
 {
-	printLine(size * 2 - 1);
+	int countStars = countDigitArray(arr, size) + size - 1;
+	printLine(countStars);
 	printArray(arr, size);
-	printLine(size * 2 - 1);
+	printLine(countStars);
 }

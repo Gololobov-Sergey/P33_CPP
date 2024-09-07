@@ -3,6 +3,7 @@
 #include"Timer.h"
 #include<algorithm>
 #include<iomanip>
+#include<conio.h>
 
 #include"myFunc.h"
 
@@ -14,7 +15,10 @@ using namespace std;
 //	body
 //}
 
-
+enum DIRECTION
+{
+	UP = 72, DOWN = 80, LEFT = 75, RIGHT = 77, ESC = 27
+};
 
 int main()
 {
@@ -23,14 +27,92 @@ int main()
 	cout.setf(ios::boolalpha);
 	srand(time(0));
 
+	// 05.09.2024 
+	// ===========================================================================
+
+	SetColor(Red, Black);
+
+	CONSOLE_CURSOR_INFO curs = { 0 };
+	curs.dwSize = sizeof(curs);
+	curs.bVisible = FALSE;
+	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);
+
+	/*for (size_t i = 0; i < 80; i++)
+	{
+		gotoxy(i, 0);
+		cout << 0;
+		Sleep(200);
+		gotoxy(i, 0);
+		cout << " ";
+	}*/
+
+	int x = 0, y = 0;
+	gotoxy(x, y);
+	cout << 0;
+	while (true)
+	{
+		
+		if (_kbhit())
+		{
+			gotoxy(x, y);
+			cout << " ";
+
+			char c = _getch();
+			switch (c)
+			{
+			case UP:
+				if (y > 0) y--;
+				break;
+			case DOWN:
+				if (y < 20) y++;
+				break;
+			case LEFT:
+				if (x > 0) x--;
+				break;
+			case RIGHT:
+				if (x < 80) x++;
+				break;
+			case ESC:
+				break;
+			default:
+				break;
+			}
+			gotoxy(x, y);
+			cout << 0;
+		}
+	}
+
+
+
+	/*const int size = 10;
+	int arr[size];
+
+	setArray(arr, size);
+	printArray(arr, size);
+
+	if (findIndex(arr, size, 3) == -1)
+	{
+
+	}*/
+
+
+	/*cout << Sum('C', 3, 5.6) << endl;
+
+	auto a = true;
+	int c = 9;
+
+	decltype(a+c) b;*/
+
+	//avgArray(arr, size);
+
 
 	// 05.09.2024 
 	// ===========================================================================
 
-	const int size = 10;
+	/*const int size = 10;
 	int arr[size];
 
-	setArray(arr, size, 20, 1000);
+	setArray(arr, size, -10, 9);*/
 	//printArray(arr, size);
 	//
 	/*printLine();
@@ -44,7 +126,7 @@ int main()
 	}*/
 
 
-	printcool(arr, size);
+	//printcool(arr, size);
 
 	//   *************
 	//   1 3 6 4 3 5 7
