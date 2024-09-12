@@ -27,15 +27,96 @@ int main()
 	cout.setf(ios::boolalpha);
 	srand(time(0));
 
+
+	// 12.09.2024
+	// ===========================================================================
+
+
+	/*int a = 5;
+
+	cout << a << endl;
+	cout << &a << endl;
+	cout << sizeof(a) << endl;
+	cout << typeid(a).name() << endl;
+
+	int* pa = &a;*/
+	/*cout << pa << endl;
+	*pa = 99;
+
+	cout << a << endl;
+	cout << *pa << endl;
+
+	int b = 10;
+	pa = &b;
+
+	*pa = 555;
+
+	cout << b << endl;*/
+
+	//cout << sizeof(pa) << endl;
+
+
+	/*int a = 8, b = 9;
+	int* pa = &a;
+	int* pb = &b;
+	cout << pa << endl;
+	cout << pb << endl;
+	int* pc = nullptr;
+
+	cout << (pa != nullptr) << endl;
+
+	cout << *(pa + 1) << endl;*/
+
+	// p + n = p + type*n
+
+
+	//const int size = 4;
+	//int a[size] = { 10,25,3,4 };
+
+	int size = 5;
+	//cin >> s;
+	int* p = new int[size];
+	setArray(p, size);
+	printArray(p, size);
+
+	p = addValueArray(p, &size, 999);
+
+	printArray(p, size);
+
+
+
+
+	
+
+
+	//cout << a << endl;
+	//printArray(a, size);
+
+	////int* p = a;
+
+	//for(int i = size-1; i >= 0; i--)
+	//{
+	//	cout << *(a + i) << endl;
+	//	//cout << a[i] << endl;
+	//}
+
+	//for (int* i = a; i != a + size; i++)
+	//{
+	//	cout << *i << endl;
+	//}
+	
+	// *(a + i) = a[i]
+
+
 	// 05.09.2024 
 	// ===========================================================================
 
-	SetColor(Red, Black);
+	/*SetColor(Red, Black);
 
 	CONSOLE_CURSOR_INFO curs = { 0 };
 	curs.dwSize = sizeof(curs);
 	curs.bVisible = FALSE;
-	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);
+	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);*/
 
 	/*for (size_t i = 0; i < 80; i++)
 	{
@@ -46,7 +127,7 @@ int main()
 		cout << " ";
 	}*/
 
-	int x = 0, y = 0;
+	/*int x = 0, y = 0;
 	gotoxy(x, y);
 	cout << 0;
 	while (true)
@@ -80,7 +161,7 @@ int main()
 			gotoxy(x, y);
 			cout << 0;
 		}
-	}
+	}*/
 
 
 

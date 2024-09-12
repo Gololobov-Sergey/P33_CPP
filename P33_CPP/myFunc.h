@@ -54,7 +54,7 @@ void setArray(T arr[], int size, int minValue = 0, int maxValue = 9)
 }
 
 template<class T>
-void printArray(T arr[], int size)
+void printArray(T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -154,4 +154,39 @@ void printcool(int arr[], int size)
 	printLine(countStars);
 	printArray(arr, size);
 	printLine(countStars);
+}
+
+
+int* addValueArray(int* arr, int* size, int value)
+{
+	int* t = new int[*size + 1];
+	for (size_t i = 0; i < *size; i++)
+	{
+		t[i] = arr[i];
+	}
+
+	t[*size] = 99;
+
+	delete arr;
+
+	(*size)++;
+
+	return t;
+}
+
+//TODO
+
+int* delValueArray(int* arr, int* size)
+{
+
+}
+
+int* addValuePosArray(int* arr, int* size, int value, int index)
+{
+
+}
+
+int* delValuePosArray(int* arr, int* size, int index)
+{
+
 }
