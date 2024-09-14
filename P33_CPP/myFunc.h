@@ -45,7 +45,7 @@ float avg(int a, int b, int c)
 }
 
 template<class T>
-void setArray(T arr[], int size, int minValue = 0, int maxValue = 9)
+void setArray(T* arr, int size, int minValue = 0, int maxValue = 9)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -54,7 +54,7 @@ void setArray(T arr[], int size, int minValue = 0, int maxValue = 9)
 }
 
 template<class T>
-void printArray(T* arr, int size)
+void printArray(const T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -156,37 +156,85 @@ void printcool(int arr[], int size)
 	printLine(countStars);
 }
 
-
-int* addValueArray(int* arr, int* size, int value)
+template<class T>
+void addValueArray(T*& arr, int& size, T value)
 {
-	int* t = new int[*size + 1];
-	for (size_t i = 0; i < *size; i++)
+	T* t = new T[size + 1];
+	for (size_t i = 0; i < size; i++)
 	{
 		t[i] = arr[i];
 	}
 
-	t[*size] = 99;
+	t[size] = value;
 
 	delete arr;
 
-	(*size)++;
+	size++;
 
-	return t;
+	arr = t;
 }
 
 //TODO
 
-int* delValueArray(int* arr, int* size)
-{
 
+template<class T>
+void delValueArray(T*& arr, int& size)
+{
+	T* t = new T[size - 1];
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		t[i] = arr[i];
+	}
+	delete arr;
+	size--;
+	arr = t;
 }
 
-int* addValuePosArray(int* arr, int* size, int value, int index)
+template<class T>
+void addValuePosArray(T*& arr, int& size, T value, int index)
 {
-
+	
 }
 
-int* delValuePosArray(int* arr, int* size, int index)
+template<class T>
+void delValuePosArray(T*& arr, int& size, int index)
 {
+	
+}
 
+template<class T>
+void swap_(T a, T b)
+{
+	T t = a;
+	a = b;
+	b = t;
+}
+
+void func(const int* a)
+{
+	//*a = 99;
+}
+
+int* isInclude(int* a, int sizeA, int* b, int sizeB)
+{
+	for (size_t i = 0; i < sizeA; i++)
+	{
+		bool flag = true;
+		for (size_t j = 0; j < sizeB; j++)
+		{
+			if (a[i] == b[j]) 
+			{
+				i++;
+				continue;
+			}
+			else
+			{
+				flag = false;
+				break;
+			}
+		}
+		if(flag == true)
+			return &a[i - sizeB];
+	}
+	return nullptr;
 }

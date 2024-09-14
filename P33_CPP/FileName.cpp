@@ -22,10 +22,134 @@ enum DIRECTION
 
 int main()
 {
-	//SetConsoleCP(1251);
-	//SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	srand(time(0));
+
+
+	// 14.09.2024
+	// ===========================================================================
+
+
+	/*  Написати функцію, яка отримує як аргумент покажчики на два масиви(А і В) 
+		і розміри масивів.Функція перевіряє, чи є масив В підмножиною масиву А, 
+		і повертає покажчик на початок знайденого фрагмента або повертає 0 у
+		протилежному випадку.*/
+
+	int sizeA = 10, sizeB = 3;
+	int* a = new int[sizeA] {1, 2, 2, 4, 5, 6, 7, 12, 2, 2};
+	int* b = new int[sizeB] {12, 2, 2};
+	int* c = isInclude(a, sizeA, b, sizeB);
+	if (c != nullptr)
+	{
+		cout << *c << endl;
+	}
+	else
+	{
+		cout << "Not found" << endl;
+	}
+
+	//int a = 9;
+	//const int* p = &a; //покажчик на константне значення
+	//a = 55;
+	//// *p = 99; // error
+	//int b = 5;
+	//p = &b;
+
+	//int* const p = &a; // константний покажчик
+	//*p = 99;
+	//int b = 9;
+	////p = &b; //error
+
+	//const int* const p = &a; // константний покажчик на константне значення
+	//*p = 99;
+	//int b = 99;
+	//p = &b;
+
+	/*int a = 6;
+	const int& r = a;
+	r = 99;*/
+
+
+
+	/*int sizeA;
+	cin >> sizeA;
+
+	int* A = new int[sizeA];
+
+	setArray(A, sizeA);
+
+	printArray(A, sizeA);
+
+	addValueArray(A, sizeA, 999);*/
+
+	/*int sizeB = 0;
+	for (size_t i = 0; i < sizeA; i++)
+	{
+		if (A[i] % 2 == 0)
+		{
+			sizeB++;
+		}
+	}
+
+	int* B = new int[sizeB];
+	
+	int c = 0;
+	for (size_t i = 0; i < sizeA; i++)
+	{
+		if (A[i] % 2 == 0)
+		{
+			B[c++] = A[i];
+		}
+	}
+
+	printArray(B, sizeB);*/
+
+
+
+	//  Дано два масиви : А[M] і B[N](M і N вводяться з клавіатури).
+	//	Необхідно створити третій масив мінімально можливого розміру, 
+	//	у якому потрібно зібрати елементи обох масивів.
+
+	/*int sizeA, sizeB;
+	cin >> sizeA >> sizeB;
+
+	int* A = new int[sizeA];
+	int* B = new int[sizeB];
+	setArray(A, sizeA);
+	setArray(B, sizeB);
+	printArray(A, sizeA);
+	printArray(B, sizeB);
+
+	int sizeC = sizeA + sizeB;
+	int* C = new int[sizeC];
+
+	for (size_t i = 0; i < sizeA; i++)
+	{
+		C[i] = A[i];
+	}
+
+	for (size_t i = 0; i < sizeB; i++)
+	{
+		C[sizeA+i] = B[i];
+	}
+	printArray(C, sizeC);*/
+
+
+	/*int a = 5, b = 9;
+	cout << a << " " << b << endl;
+	swap_(a, b);
+
+	cout << a << " " << b << endl;*/
+
+
+	//int a = 5;          int b = 9;
+	///*int* pa = &a;*/   int& rb = b;
+	///**pa = 99;*/       rb = 99;
+	///*pa = &b;*/        rb = a;
+
+	//cout << b << endl;
 
 
 	// 12.09.2024
@@ -73,17 +197,19 @@ int main()
 	//const int size = 4;
 	//int a[size] = { 10,25,3,4 };
 
-	int size = 5;
-	//cin >> s;
-	int* p = new int[size];
-	setArray(p, size);
-	printArray(p, size);
+	//int size = 5;
+	////cin >> s;
+	//int* p = new int[size];
+	//setArray(p, size);
+	//printArray(p, size);
 
-	p = addValueArray(p, &size, 999);
+	//addValueArray(p, size, 999);
 
-	printArray(p, size);
+	//printArray(p, size);
 
+	//delValueArray(p, size);
 
+	//printArray(p, size);
 
 
 	
