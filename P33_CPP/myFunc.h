@@ -238,3 +238,115 @@ int* isInclude(int* a, int sizeA, int* b, int sizeB)
 	}
 	return nullptr;
 }
+
+
+void hello()
+{
+	cout << "Hello" << endl;
+}
+
+void goodbye()
+{
+	cout << "Goodbye" << endl;
+}
+
+
+int Sum(int a, int b)
+{
+	return a + b;
+}
+
+int Diff(int a, int b)
+{
+	return a - b;
+}
+
+int Mult(int a, int b)
+{
+	return a * b;
+}
+
+int Div(int a, int b)
+{
+	return a / b;
+}
+
+int pow_(int a, int b)
+{
+	return pow(a, b);
+}
+
+
+bool asc(int a, int b)
+{
+	return a > b;
+}
+
+
+bool desc(int a, int b)
+{
+	return a < b;
+}
+
+
+bool EvenFirst(int a, int b)
+{
+	if (a % 2 == 1 && b % 2 == 0)
+		return true;
+	if (a % 2 == 0 && b % 2 == 1)
+		return false;
+	return asc(a, b);
+}
+
+bool FromLastDigit(int a, int b)
+{
+	if (a % 10 > b % 10)
+		return true;
+	else if (a % 10 < b % 10)
+		return false;
+	else
+		return asc(a, b);
+}
+
+
+template<class T>
+void bubbleSort(T* arr, int size, bool(*method)(T, T) = asc)
+{
+	for (size_t i = 0; i < size-1; i++)
+	{
+		for (size_t j = 0; j < size-1-i; j++)
+		{
+			if (method(arr[j],arr[j + 1]))
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
+
+void kopatel()
+{
+	cout << "Копає одна людина з лопатою" << endl;
+}
+
+
+void kopatel3()
+{
+	cout << "Копає три людини з лопатою і кіркою" << endl;
+}
+
+void exkavator()
+{
+	cout << "Копає екскаватор, люди курять в сторонці" << endl;
+}
+
+
+void(*prorab(int len))()
+{
+	if (len < 50)
+		return kopatel;
+	if (len < 150 && len > 50)
+		return kopatel3;
+	return exkavator;
+}

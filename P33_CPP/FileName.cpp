@@ -28,6 +28,56 @@ int main()
 	srand(time(0));
 
 
+
+	// 19.09.2024
+	// ===========================================================================
+
+
+
+	//cout << hello << endl;
+
+	// type (*name)(param)
+
+	/*void (*message)();
+	message = hello;
+	message();
+	message = goodbye;
+	message();
+
+	void(*arr[])() = {hello, goodbye};
+	for (size_t i = 0; i < 2; i++)
+	{
+		arr[i]();
+	}*/
+
+
+	//int(*oper[])(int, int) = { Sum, Diff, Mult, Div, pow_ };
+	//int a, b;
+	//cin >> a >> b;
+	//cout << "1+, 2-, 3*, 4/, 5^ :";
+	//int c;
+	//cin >> c;
+	//cout << oper[c - 1](a, b) << endl;
+
+
+
+	/*int size;
+	cin >> size;
+	int* arr = new int[size];
+	setArray(arr, size, 0, 99);
+	printArray(arr, size);
+
+	bubbleSort(arr, size, FromLastDigit);
+
+	printArray(arr, size);*/
+
+	int len;
+	cin >> len;
+
+	void(*director)() = prorab(len);
+	director();
+
+
 	// 14.09.2024
 	// ===========================================================================
 
@@ -37,7 +87,7 @@ int main()
 		і повертає покажчик на початок знайденого фрагмента або повертає 0 у
 		протилежному випадку.*/
 
-	int sizeA = 10, sizeB = 3;
+	/*int sizeA = 10, sizeB = 3;
 	int* a = new int[sizeA] {1, 2, 2, 4, 5, 6, 7, 12, 2, 2};
 	int* b = new int[sizeB] {12, 2, 2};
 	int* c = isInclude(a, sizeA, b, sizeB);
@@ -48,7 +98,7 @@ int main()
 	else
 	{
 		cout << "Not found" << endl;
-	}
+	}*/
 
 	//int a = 9;
 	//const int* p = &a; //покажчик на константне значення
