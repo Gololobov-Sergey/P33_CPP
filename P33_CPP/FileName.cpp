@@ -71,11 +71,53 @@ int main()
 
 	printArray(arr, size);*/
 
-	int len;
+	/*int len;
 	cin >> len;
 
 	void(*director)() = prorab(len);
-	director();
+	director();*/
+
+
+	CONSOLE_CURSOR_INFO curs = { 0 };
+	curs.dwSize = sizeof(curs);
+	curs.bVisible = FALSE;
+	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);
+
+
+	int bullet[3] = { 50, 50, 50 };
+
+	void(*shot)(int*) = gun;
+	//while (true)
+	//{
+	//	shot = logic(bullet);
+	//	shot(bullet);
+	//	Sleep(1000);
+	//}
+	
+	int choice = 0;
+
+	while (true)
+	{
+
+		if (_kbhit())
+		{
+			char c = _getch();
+			//cout << c << endl;
+			switch (c)
+			{
+			case UP:
+				shot(bullet);
+				break;
+			case 97:
+				choice++;
+				shot = logic(bullet, choice);
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
 
 
 	// 14.09.2024

@@ -108,7 +108,19 @@ int findIndex(T arr[], int size, T key)
 	return -1;
 }
 
-
+template<class T>
+T maxElemArray(T* arr, int size)
+{
+	T max = arr[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+		}
+	}
+	return max;
+}
 
 bool isEven(int a)
 {
@@ -349,4 +361,44 @@ void(*prorab(int len))()
 	if (len < 150 && len > 50)
 		return kopatel3;
 	return exkavator;
+}
+
+
+void gun(int* bullet)
+{
+	for (size_t i = 0; i < 80; i++)
+	{
+		gotoxy(i, 0);
+		cout << "->";
+		Sleep(10);
+		gotoxy(i, 0);
+		cout << "  ";
+	}
+	bullet[0]--;
+}
+
+void machineGun(int* bullet)
+{
+	cout << "->->->->->" << endl;
+	bullet[1] -= 5;
+}
+
+void arrow(int* bullet)
+{
+	cout << ">>----->" << endl;
+	bullet[2]--;
+}
+
+void(*logic(int* bullet))(int*)
+{
+	void(*weapon[])(int*) = { gun, machineGun, arrow };
+
+	return weapon[findIndex(bullet, 3, maxElemArray(bullet, 3))];
+}
+
+void(*logic(int* bullet, int c))(int*)
+{
+	void(*weapon[])(int*) = { gun, machineGun, arrow };
+
+	return weapon[c%3];
 }
