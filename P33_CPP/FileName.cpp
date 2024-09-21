@@ -6,6 +6,7 @@
 #include<conio.h>
 
 #include"myFunc.h"
+#include"strFunc.h"
 
 using namespace std;
 
@@ -26,6 +27,49 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	srand(time(0));
+
+
+
+	// 21.09.2024
+	// ===========================================================================
+
+	//char* mystrstr(char* str1, char* str2); — функція здійснює пошук 
+	// підрядка str2 у рядку str1.Функція повертає покажчик на перше входження 
+	// підрядка str2 у рядок str1, в іншому випадку — nullptr.
+
+
+
+	/*char str[] = { 'H', 'e', '\0', 'l', 'o', '\0'};
+
+	char str2[] = "mama papa detka papa";
+	char str3[] = "detkaa";
+
+	int arr[] = { 1,2,3,4,5 };
+
+	cout << arr << endl;
+
+	cout << str << endl;
+
+	cout << lenStr(str2) << endl;
+	cout << strlen(str2) << endl;
+
+	cout << ChangeChar(str2, 'a', 'o') << endl;
+	cout << str2 << endl;
+
+
+	cout << countWords(str2) << endl;
+
+	char* t = mystrstr(str2, str3);
+	if(t)
+		cout << t << endl;*/
+
+
+	//cout << strReverce("Hello C++") << endl;
+
+
+
+	char str[] = "Gololobov Serhiy";
+
 
 
 
@@ -78,7 +122,7 @@ int main()
 	director();*/
 
 
-	CONSOLE_CURSOR_INFO curs = { 0 };
+	/*CONSOLE_CURSOR_INFO curs = { 0 };
 	curs.dwSize = sizeof(curs);
 	curs.bVisible = FALSE;
 	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);
@@ -86,7 +130,7 @@ int main()
 
 	int bullet[3] = { 50, 50, 50 };
 
-	void(*shot)(int*) = gun;
+	void(*shot)(int*) = gun;*/
 	//while (true)
 	//{
 	//	shot = logic(bullet);
@@ -94,29 +138,29 @@ int main()
 	//	Sleep(1000);
 	//}
 	
-	int choice = 0;
+	//int choice = 0;
 
-	while (true)
-	{
+	//while (true)
+	//{
 
-		if (_kbhit())
-		{
-			char c = _getch();
-			//cout << c << endl;
-			switch (c)
-			{
-			case UP:
-				shot(bullet);
-				break;
-			case 97:
-				choice++;
-				shot = logic(bullet, choice);
-				break;
-			default:
-				break;
-			}
-		}
-	}
+	//	if (_kbhit())
+	//	{
+	//		char c = _getch();
+	//		//cout << c << endl;
+	//		switch (c)
+	//		{
+	//		case UP:
+	//			shot(bullet);
+	//			break;
+	//		case 97:
+	//			choice++;
+	//			shot = logic(bullet, choice);
+	//			break;
+	//		default:
+	//			break;
+	//		}
+	//	}
+	//}
 
 
 
