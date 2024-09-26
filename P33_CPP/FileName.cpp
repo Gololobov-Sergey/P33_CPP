@@ -1,4 +1,5 @@
-﻿#include<iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
 #include<Windows.h>
 #include"Timer.h"
 #include<algorithm>
@@ -27,6 +28,62 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	srand(time(0));
+
+
+
+	// 21.09.2024
+	// ===========================================================================
+
+	//char str[] = "Gololobov Serhiy";
+
+	//cout << reverseWord(str) << endl;
+
+
+	/*char str1[80];
+	cin.getline(str1, 80);
+	char str2[80];
+	cin.getline(str2, 80);*/
+
+	//strcpy_s(str2, 80, str1);
+	//strncpy_s(str2, 80, str1, 5);
+
+	//strcat_s(str2, 80, str1);
+	//strncat_s(str2, 80, str1, 5);
+
+	/*cout << strcmp(str1, str2) << endl;
+	cout << strncmp(str1, str2, 3) << endl;
+	cout << _stricmp(str1, str2) << endl;
+	cout << _strnicmp(str1, str2, 3) << endl;*/
+
+	/*char* t = strrchr(str1, 'a');
+	if(t)
+		cout << t << endl;*/
+
+	/*char* t = strstr(str1, "mama");
+	if (t)
+		cout << t << endl;*/
+
+	/*cout << _strlwr(str1) << endl;
+	cout << _strupr(str1) << endl;*/
+
+	
+
+	//cout << _strset(str2, '#') << endl;
+
+	/*int a = atoi(str1);
+	cout << a << endl;*/
+
+	/*_itoa(2024, str2, 2);
+	cout << str2 << endl;*/
+
+	// MAMA PAPA mama papa mama detka  // mama
+	// MAMA PAPA  papa  detka
+
+	cout << replaceStr("C++ C# SQL C# JAVA", "Python", "C#") << endl;
+
+	// 12+45  + -
+
+	cout << calc("234+23") << endl;
 
 
 
@@ -68,7 +125,7 @@ int main()
 
 
 
-	char str[] = "Gololobov Serhiy";
+	
 
 
 
