@@ -100,7 +100,7 @@ int findIndex(T arr[], int size, T key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
-		if(arr[i] == key)
+		if (arr[i] == key)
 		{
 			return i;
 		}
@@ -205,13 +205,13 @@ void delValueArray(T*& arr, int& size)
 template<class T>
 void addValuePosArray(T*& arr, int& size, T value, int index)
 {
-	
+
 }
 
 template<class T>
 void delValuePosArray(T*& arr, int& size, int index)
 {
-	
+
 }
 
 template<class T>
@@ -234,7 +234,7 @@ int* isInclude(int* a, int sizeA, int* b, int sizeB)
 		bool flag = true;
 		for (size_t j = 0; j < sizeB; j++)
 		{
-			if (a[i] == b[j]) 
+			if (a[i] == b[j])
 			{
 				i++;
 				continue;
@@ -245,7 +245,7 @@ int* isInclude(int* a, int sizeA, int* b, int sizeB)
 				break;
 			}
 		}
-		if(flag == true)
+		if (flag == true)
 			return &a[i - sizeB];
 	}
 	return nullptr;
@@ -324,11 +324,11 @@ bool FromLastDigit(int a, int b)
 template<class T>
 void bubbleSort(T* arr, int size, bool(*method)(T, T) = asc)
 {
-	for (size_t i = 0; i < size-1; i++)
+	for (size_t i = 0; i < size - 1; i++)
 	{
-		for (size_t j = 0; j < size-1-i; j++)
+		for (size_t j = 0; j < size - 1 - i; j++)
 		{
-			if (method(arr[j],arr[j + 1]))
+			if (method(arr[j], arr[j + 1]))
 			{
 				swap(arr[j], arr[j + 1]);
 			}
@@ -400,5 +400,133 @@ void(*logic(int* bullet, int c))(int*)
 {
 	void(*weapon[])(int*) = { gun, machineGun, arrow };
 
-	return weapon[c%3];
+	return weapon[c % 3];
+}
+
+template<class T>
+void createArray2D(T**& arr, int row, int col)
+{
+	arr = new int* [col];
+	for (size_t i = 0; i < row; i++)
+	{
+		arr[i] = new int[col];
+	}
+}
+
+
+template<class T>
+void setArray2D(T** arr, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % 10;
+		}
+	}
+}
+
+template<class T>
+void printArray2D(T** arr, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+template<class T>
+void addRowArray2D(T**& arr, int& row, int col, T* newarr = nullptr)
+{
+	T** temp = new int* [row + 1];
+	for (size_t i = 0; i < row; i++)
+	{
+		temp[i] = arr[i];
+	}
+
+	temp[row] = new int[col];
+
+	for (size_t i = 0; i < col; i++)
+	{
+		temp[row][i] = (newarr == nullptr) ? 0 : newarr[i];
+	}
+
+	delete arr;
+	arr = temp;
+	row++;
+}
+
+template<class T>
+void addColArray2D(T**& arr, int row, int& col, T* newcol = nullptr)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		addValueArray(arr[i], col, (newcol != nullptr) ? newcol[i] : 0);
+		col--;
+
+		/*T* temp = new int[col + 1];
+		for (size_t j = 0; j < col; j++)
+		{
+			temp[j] = arr[i][j];
+		}
+
+		temp[col] = (newcol != nullptr) ? newcol[i] : 0;
+		delete arr[i];
+		arr[i] = temp;*/
+	}
+	col++;
+}
+
+// TODO
+
+template<class T>
+void addColPosArray2D(T**& arr, int row, int& col, int index, T* newcol = nullptr);
+
+
+template<class T>
+void addRowPosArray2D(T**& arr, int& row, int col, int index, T* newarr = nullptr);
+
+template<class T>
+void delRowPosArray2D(T**& arr, int& row, int col, int index);
+
+template<class T>
+void delColPosArray2D(T**& arr, int row, int& col, int index);
+
+
+int*** createMatrix(int* arr, int size)
+{
+	int count = 0;
+	for (size_t i = 2; i <= size/2; i++)
+	{
+		if (size % i == 0)
+			count++;
+	}
+
+	int*** p = new int** [count];
+	int k = 0;
+	for (size_t i = 2; i <= size / 2; i++)
+	{
+		if (size % i == 0)
+		{
+			int row = i;
+			int col = size / i;
+			createArray2D(p[k], row, col);
+			for (size_t j = 0; j < size; j++)
+			{
+				p[k][j/col][j%col] = arr[j];
+			}
+			k++;
+		}
+	}
+
+	return p;
+}
+
+void print(int*** p)
+{
+	
 }

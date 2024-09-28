@@ -30,6 +30,60 @@ int main()
 	srand(time(0));
 
 
+	// 28.09.2024
+	// ===========================================================================
+
+	int size;
+	cin >> size;
+	int* a = new int[size];
+	setArray(a, size);
+	printArray(a, size);
+
+	int*** p = createMatrix(a, size);
+	print(p);
+
+
+	/*int a = 5;
+	int* p = &a;
+	int** pp = &p;
+
+	cout << *p << endl;
+	cout << *(*pp) << endl;*/
+
+	//cout << sizeof(int) << endl;
+
+	////int a[3][3];
+
+	//int row, col;
+	//cin >> row >> col;
+	//int** p = nullptr;
+
+	//createArray2D(p, row, col);
+	//setArray2D(p, row, col);
+	//printArray2D(p, row, col);
+
+
+	// *(*(p + i) + j) = p[i][j]
+
+	//swap(p[0], p[row - 1]);
+
+	/*for (size_t i = 0; i < col; i++)
+	{
+		swap(p[0][i], p[row - 1][i]);
+	}*/
+
+	
+
+
+	/*int* a = new int[row];
+	setArray(a, row);
+
+	addColArray2D(p, row, col);
+	addRowArray2D(p, row, col, a);
+	addRowArray2D(p, row, col);
+
+	cout << endl;
+	printArray2D(p, row, col);*/
 
 	// 21.09.2024
 	// ===========================================================================
@@ -79,11 +133,11 @@ int main()
 	// MAMA PAPA mama papa mama detka  // mama
 	// MAMA PAPA  papa  detka
 
-	cout << replaceStr("C++ C# SQL C# JAVA", "Python", "C#") << endl;
+	//cout << replaceStr("C++ C# SQL C# JAVA", "Python", "C#") << endl;
 
 	// 12+45  + -
 
-	cout << calc("234+23") << endl;
+	//cout << calc("234+23") << endl;
 
 
 
