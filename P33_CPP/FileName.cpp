@@ -8,6 +8,7 @@
 
 #include"myFunc.h"
 #include"strFunc.h"
+#include"MyStruct.h"
 
 using namespace std;
 
@@ -16,6 +17,9 @@ using namespace std;
 //{
 //	body
 //}
+
+
+
 
 enum DIRECTION
 {
@@ -30,17 +34,98 @@ int main()
 	srand(time(0));
 
 
+
+	// 03.10.2024
+	// ===========================================================================
+
+	/*Point p;
+	p.name = 'A';
+	p.x = 6;
+	p.y = 5;
+	printPoint(p);
+
+	Point p2 = { 'B', 4, 8 };
+	printPoint(p2);
+
+	Point p3[100];
+
+	Point* p4 = new Point[5];
+	p4[2].x = 10;*/
+
+	/*const int size = 5;
+	Point p[5];
+	for (size_t i = 0; i < size; i++)
+	{
+		p[i].name = 'A' + i;
+		p[i].x = rand() % 10;
+		p[i].y = rand() % 10;
+
+		printPoint(p[i]);
+	}
+	printLine(10);
+	double len = 0;
+	int i1 = 0, i2 = 0;
+	for (size_t i = 0; i < size-1; i++)
+	{
+		for (size_t j = i+1; j < size; j++)
+		{
+			double currentLen = lenPoint(p[i], p[j]);
+			if (currentLen > len)
+			{
+				len = currentLen;
+				i1 = i;
+				i2 = j;
+			}
+		}
+	}
+
+	printPoint(p[i1]);
+	printPoint(p[i2]);
+	cout << len << endl;*/
+
+	
+	/*Student s1;
+	s1.setName("Vasya");
+
+	s1.addMark(10);
+	s1.addMark(12);
+	s1.addMark(12);
+	s1.addMark(11);
+
+
+	Student s2;
+	s2.setName("Oleg");
+
+	s2.addMark(8);
+	s2.addMark(6);
+	s2.addMark(7);
+	s2.addMark(4);
+
+	Group group;
+	group.setName("P33");
+	group.addStudent(s1);
+	group.addStudent(s2);
+	group.print();*/
+	
+	
+
+	Car c;
+	c.move();
+	c.beep();
+	
+
+
 	// 28.09.2024
 	// ===========================================================================
 
-	int size;
+	/*int size;
 	cin >> size;
 	int* a = new int[size];
 	setArray(a, size);
 	printArray(a, size);
 
 	int*** p = createMatrix(a, size);
-	print(p);
+	print(p);*/
 
 
 	/*int a = 5;

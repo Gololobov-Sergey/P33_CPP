@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myFunc.h" />
+    <ClInclude Include="MyStruct.h" />
     <ClInclude Include="strFunc.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
