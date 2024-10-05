@@ -9,6 +9,8 @@
 #include"myFunc.h"
 #include"strFunc.h"
 #include"MyStruct.h"
+#include"Library.h"
+#include"Menu.h"
 
 using namespace std;
 
@@ -33,6 +35,34 @@ int main()
 	cout.setf(ios::boolalpha);
 	srand(time(0));
 
+
+	// 05.10.2024
+	// ===========================================================================
+
+	/*Розробіть програму "Бібліотека".Створіть структуру "Книга" 
+	(назва, автор, рік видавництва, жанр).Створіть масив із книг.
+	Реалізуйте для нього такі можливості :
+
+	Редагувати книгу;
+	Друк усіх книг;
+	Пошук книги за автором;
+	Пошук книги за назвою;
+	Сортування масиву за назвою книг;
+	Сортування масиву за автором;
+	Сортування масиву за роком видавництва.*/
+
+	Library library;
+
+	library.addBook("Name1", "Author1", 2000, "Genre3");
+	library.addBook("Name2", "Author2", 2010, "Genre2");
+	library.addBook("Name3", "Author3", 2020, "Genre3");
+	library.addBook("Name4", "Author2", 2010, "Genre2");
+	library.addBook("Name1", "Author1", 1999, "Genre1");
+
+	library.menu();
+
+
+	
 
 
 	// 03.10.2024
@@ -109,9 +139,9 @@ int main()
 	
 	
 
-	Car c;
+	/*Car c;
 	c.move();
-	c.beep();
+	c.beep();*/
 	
 
 
