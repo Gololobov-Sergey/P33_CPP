@@ -24,7 +24,7 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-void printLine(int n = 10, char s = '*')
+inline void printLine(int n = 10, char s = '*')
 {
 	for (size_t i = 0; i < n; i++)
 	{

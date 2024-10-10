@@ -28,6 +28,11 @@ double lenPoint(Point p1, Point p2)
 }
 
 
+bool fromName(Point p1, Point p2)
+{
+	return p1.name > p2.name;
+}
+
 // ============== DATE =================
 
 struct Date

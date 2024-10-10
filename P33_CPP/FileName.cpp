@@ -5,14 +5,25 @@
 #include<algorithm>
 #include<iomanip>
 #include<conio.h>
+#include<fstream>
 
 #include"myFunc.h"
 #include"strFunc.h"
 #include"MyStruct.h"
 #include"Library.h"
 #include"Menu.h"
+#include"Header.h"
 
 using namespace std;
+
+#define SIZE 50
+#define SQR(n) (n)*(n)
+#define BEGIN {
+#define END }
+#define ЦИКЛ(n) for (size_t i = 0; i < n; i++)
+#define PRINT cout 
+
+#define TEST
 
 
 //type name(param)
@@ -36,6 +47,105 @@ int main()
 	srand(time(0));
 
 
+	// 10.10.2024
+	// ===========================================================================
+
+	//int a[5] = { 1,2,3,5,7 };
+
+	//ofstream fout;
+	//fout.open("text.txt");
+	////fout << "Hello C++" << endl;
+	//for (size_t i = 0; i < 5; i++)
+	//{
+	//	fout << a[i] << " ";
+	//}
+	//fout.close();
+
+	/*int size = 0;
+	int* b = nullptr;
+
+	ifstream fin("text.txt");
+	if (fin.is_open())
+	{
+		int a;
+		while(fin >> a)
+		{
+			addValueArray(b, size, a);
+		}
+	}
+	fin.close();
+
+	printArray(b, size);*/
+
+
+
+	/*ifstream in("text.txt");
+	ofstream out("even.txt");
+	int a;
+	while (in >> a)
+	{
+		if (a % 2 == 0)
+		{
+			out << a << " ";
+		}
+	}
+	in.close();
+	out.close();*/
+
+
+	ifstream in("Timer.h");
+	char buff[200];
+	while (in.getline(buff, 200))
+	{
+		cout << buff << endl;
+	}
+
+
+
+	//func_test(44);
+
+	/*int arr[SIZE];
+
+	cout << SQR(5) << endl;
+
+	ЦИКЛ(5)
+	BEGIN
+		PRINT << "mama" << endl;
+	END
+
+#define SIZE 100
+
+	int arr2[SIZE];*/
+
+
+//#ifndef TEST
+//	int arr10[100];
+//#else
+//	int* arr10 = new int[100];
+//#endif // TEST
+//
+//
+//	arr10[0] = 10;
+
+	/*const int size = 15;
+	Point p[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		p[i].name = rand()%26 + 'A';
+		p[i].x = rand() % 1;
+		p[i].y = rand() % 10;
+
+		printPoint(p[i]);
+	}
+
+	bubbleSort(p, size, fromName);
+	cout << endl;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		printPoint(p[i]);
+	}*/
+
 	// 05.10.2024
 	// ===========================================================================
 
@@ -51,7 +161,7 @@ int main()
 	Сортування масиву за автором;
 	Сортування масиву за роком видавництва.*/
 
-	Library library;
+	/*Library library;
 
 	library.addBook("Name1", "Author1", 2000, "Genre3");
 	library.addBook("Name2", "Author2", 2010, "Genre2");
@@ -59,7 +169,7 @@ int main()
 	library.addBook("Name4", "Author2", 2010, "Genre2");
 	library.addBook("Name1", "Author1", 1999, "Genre1");
 
-	library.menu();
+	library.menu();*/
 
 
 	
