@@ -23,7 +23,7 @@ using namespace std;
 #define ЦИКЛ(n) for (size_t i = 0; i < n; i++)
 #define PRINT cout 
 
-#define TEST
+
 
 
 //type name(param)
@@ -46,6 +46,54 @@ int main()
 	cout.setf(ios::boolalpha);
 	srand(time(0));
 
+	// 12.10.2024
+	// ===========================================================================
+
+
+	cout << sizeof(Date) << endl;
+
+	Date d = { 12,10,2024 };
+	cout << d.d << " " << d.m << " " << d.y << endl;
+
+	// & | >> << ~ ^
+
+	/*cout << (5 | 7) << endl;
+
+	int state = 74;
+
+	if ((state & 8) == 8)
+	{
+		cout << "Bit active" << endl;
+	}
+	else
+	{
+		cout << "Bit not active" << endl;
+	}*/
+
+
+	/*int d = 12, m = 10, y = 2024;
+	int date = d;
+	date <<= 4;
+	date |= m;
+	date <<= 12;
+	date |= y;
+
+	cout << date << endl;
+	int d1, m1, y1;
+
+	y1 = date & 4095;
+	date >>= 12;
+	m1 = date & 15;
+	date >>= 4;
+	d1 = date;
+	cout << d1 << " " << m1 << " " << y1 << endl;*/
+
+
+	/*string s;
+	cin >> s;
+	hash<string> h;
+	int res = h(s);
+	cout << res << endl;*/
 
 	// 10.10.2024
 	// ===========================================================================
@@ -93,12 +141,12 @@ int main()
 	out.close();*/
 
 
-	ifstream in("Timer.h");
+	/*ifstream in("Timer.h");
 	char buff[200];
 	while (in.getline(buff, 200))
 	{
 		cout << buff << endl;
-	}
+	}*/
 
 
 
@@ -163,11 +211,13 @@ int main()
 
 	/*Library library;
 
+#ifdef TEST
 	library.addBook("Name1", "Author1", 2000, "Genre3");
 	library.addBook("Name2", "Author2", 2010, "Genre2");
 	library.addBook("Name3", "Author3", 2020, "Genre3");
 	library.addBook("Name4", "Author2", 2010, "Genre2");
 	library.addBook("Name1", "Author1", 1999, "Genre1");
+#endif
 
 	library.menu();*/
 

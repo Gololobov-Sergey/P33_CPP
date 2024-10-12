@@ -10,9 +10,9 @@ using namespace std;
 
 struct Point
 {
-	char name;
-	int x;
+	double x;
 	int y;
+	char name;
 };
 
 
@@ -37,7 +37,9 @@ bool fromName(Point p1, Point p2)
 
 struct Date
 {
-	int d, m, y;
+	unsigned int d:5;
+	unsigned int m:4;
+	unsigned int y:12;
 };
 
 

@@ -1,6 +1,8 @@
 #pragma once
 #include "Menu.h"
 
+//#define TEST
+
 struct Book
 {
 	char* name; 
@@ -101,7 +103,44 @@ struct Book
 		case 4: return;
 		}
 	}
+
+	void save(ofstream& out)
+	{
+		out << name << endl;
+		out << author << endl;
+		out << year_publishing << endl;
+		out << genre << endl;
+	}
+
+	void load(istream& in)
+	{
+		char buff[200];
+		in.getline(buff, 200);
+		setName(buff);
+		in.getline(buff, 200);
+		setAuthor(buff);
+		in >> year_publishing;
+		in.get();
+		in.getline(buff, 200);
+		setGenre(buff);
+	}
 };
+
+bool fromName(Book b1, Book b2)
+{
+	return strcmp(b1.name, b2.name) > 0;
+}
+
+bool fromAuthor(Book b1, Book b2)
+{
+	return strcmp(b1.author, b2.author) > 0;
+}
+
+bool fromYear(Book b1, Book b2)
+{
+	return b1.year_publishing > b2.year_publishing;
+}
+
 
 struct Library
 {
@@ -161,12 +200,44 @@ struct Library
 
 	void find_name()
 	{
-
+		char buff[80];
+		cout << "Назва книги :";
+		cin.getline(buff, 80);
+		for (size_t i = 0; i < size; i++)
+		{
+			if (_stricmp(books[i].name, buff) == 0)
+			{
+				books[i].print();
+			}
+		}
+		system("pause");
 	}
 
 	void sort()
 	{
+		system("cls");
+		int c = Menu::select_vertical({
+			"За назвою",
+			"За автором",
+			"За роком видання",
+			"Вихід" }, HorizontalAlignment::Center);
 
+		switch (c)
+		{
+		case 0:
+			bubbleSort(books, size, fromName);
+			break;
+		case 1:
+			bubbleSort(books, size, fromAuthor);
+			break;
+		case 2:
+			bubbleSort(books, size, fromYear);
+			break;
+		case 3:
+			return;
+		default:
+			break;
+		}
 	}
 
 	void editBook()
@@ -187,8 +258,23 @@ struct Library
 		books[c - 1].edit();
 	}
 
+	void saveNotTest()
+	{
+
+#ifndef TEST
+		save();
+#endif // !TEST
+
+	}
+
+
 	void menu()
 	{
+
+#ifndef TEST
+		load();
+#endif
+
 		while (true)
 		{
 			system("cls");
@@ -204,8 +290,8 @@ struct Library
 
 			switch (c)
 			{
-			case 0: addBook(); break;
-			case 1: editBook(); break;
+			case 0: addBook(); saveNotTest(); break;
+			case 1: editBook(); saveNotTest(); break;
 			case 2: print_all(); break;
 			case 3: find_autor(); break;
 			case 4: find_name(); break;
@@ -215,6 +301,33 @@ struct Library
 				break;
 			}
 		}
+	}
+
+	void save()
+	{
+		ofstream out("library.txt");
+		out << size << endl;
+		for (size_t i = 0; i < size; i++)
+		{
+			books[i].save(out);
+		}
+		out.close();
+	}
+
+	void load()
+	{
+		ifstream in("library.txt");
+		if (in.is_open())
+		{
+			in >> size;
+			in.get();
+			books = new Book[size];
+			for (size_t i = 0; i < size; i++)
+			{
+				books[i].load(in);
+			}
+		}
+		in.close();
 	}
 };
 
